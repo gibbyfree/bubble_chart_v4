@@ -1,0 +1,381 @@
+{
+    "slurs": [
+        {
+            "term": "whitie",
+            "category": "racial"
+        },
+        {
+            "term": "whitey",
+            "category": "racial"
+        },
+        {
+            "term": "skank",
+            "category": "gendered"
+        },
+        {
+            "term": "cracker",
+            "category": "racial"
+        },
+        {
+            "term": "rube",
+            "category": "classist"
+        },
+        {
+            "term": "hooknose",
+            "category": "ethnic"
+        },
+        {
+            "term": "chimp",
+            "category": "racial"
+        },
+        {
+            "term": "libtard",
+            "category": "ableist"
+        },
+        {
+            "term": "gook",
+            "category": "racial"
+        },
+        {
+            "term": "monkey",
+            "category": "racial"
+        },
+        {
+            "term": "nigger",
+            "category": "racial"
+        },
+        {
+            "term": "niglet",
+            "category": "racial"
+        },
+        {
+            "term": "uncle tom",
+            "category": "racial"
+        },
+        {
+            "term": "jigaboo",
+            "category": "racial"
+        },
+        {
+            "term": "jewtard",
+            "category": "anti-semitic"
+        },
+        {
+            "term": "cunt",
+            "category": "misogynist"
+        },
+        {
+            "term": "twat",
+            "category": "misogynist"
+        },
+        {
+            "term": "spick",
+            "category": "racial"
+        },
+        {
+            "term": "honky",
+            "category": "racial"
+        },
+        {
+            "term": "honkey",
+            "category": "racial"
+        },
+        {
+            "term": "hillbilly",
+            "category": "classist"
+        },
+        {
+            "term": "hillbillies",
+            "category": "classist"
+        },
+        {
+            "term": "halfbreed",
+            "category": "racial"
+        },
+        {
+            "term": "half breed",
+            "category": "racial"
+        },
+        {
+            "term": "half-breed",
+            "category": "racial"
+        },
+        {
+            "term": "gyp",
+            "category": "racial"
+        },
+        {
+            "term": "whore",
+            "category": "misogynist"
+        },
+        {
+            "term": "mammy",
+            "category": "racial"
+        },
+        {
+            "term": "yokel",
+            "category": "classist"
+        },
+        {
+            "term": "white trash",
+            "category": "racial"
+        },
+        {
+            "term": "trailer trash",
+            "category": "classist"
+        },
+        {
+            "term": "sheister",
+            "category": "anti-semitic"
+        },
+        {
+            "term": "shyster",
+            "category": "anti-semitic"
+        },
+        {
+            "term": "nigga",
+            "category": "racial"
+        },
+        {
+            "term": "dyke",
+            "category": "homophobic"
+        },
+        {
+            "term": "slut",
+            "category": "misogynist"
+        },
+        {
+            "term": "pussy",
+            "category": "misogynist"
+        },
+        {
+            "term": "pussies",
+            "category": "misogynist"
+        },
+        {
+            "term": "gorilla",
+            "category": "racial"
+        },
+        {
+            "term": "feminazi",
+            "category": "misogynist"
+        },
+        {
+            "term": "injun",
+            "category": "racial"
+        },
+        {
+            "term": "bimbo",
+            "category": "misogynist"
+        },
+        {
+            "term": "dog eater",
+            "category": "racial"
+        },
+        {
+            "term": "chav",
+            "category": "classist"
+        },
+        {
+            "term": "fag",
+            "category": "homophobic"
+        },
+        {
+            "term": "picaninny",
+            "category": "racial"
+        },
+        {
+            "term":"pickinniny",
+            "category": "racial"
+        },
+        {
+            "term": "spaz",
+            "category": "ableist"
+        },
+        {
+            "term": "slag",
+            "category": "misogynist"
+        },
+        {
+            "term": "mong",
+            "category": "ableist"
+        },
+        {
+            "term": "hoodrat",
+            "category": "classist"
+        },
+        {
+            "term": "cripple",
+            "category": "ableist"
+        },
+        {
+            "term": "chink",
+            "category": "racial"
+        },
+        {
+            "term": "bitch",
+            "category": "misogynist"
+        },
+        {
+            "term": "kike",
+            "category": "anti-semitic"
+        },
+        {
+            "term": "niglet",
+            "category": "racial"
+        },
+        {
+            "term": "yellows",
+            "category": "racial"
+        },
+        {
+            "term": "wetback",
+            "category": "racial"
+        },
+        {
+            "term": "towel head",
+            "category": "racial"
+        },
+        {
+            "term": "tranny",
+            "category": "transphobic"
+        },
+        {
+            "term": "trannies",
+            "category": "transphobic"
+        },
+        {
+            "term": "retard",
+            "category": "ableist"
+        },
+        {
+            "term": "spergs",
+            "category": "ableist"
+        },
+        {
+            "term": "slant eyes",
+            "category": "racial"
+        },
+        {
+            "term": "shemale",
+            "category": "transphobic"
+        },
+        {
+            "term": "redneck",
+            "category": "classist"
+        },
+        {
+            "term": "redskin",
+            "category": "racial"
+        },
+        {
+            "term": "race traitor",
+            "category": "racial"
+        },
+        {
+            "term": "raghead",
+            "category": "racial"
+        },
+        {
+            "term": "rag head",
+            "category": "racial"
+        },
+        {
+            "term": "queer",
+            "category": "homophobic"
+        },
+        {
+            "term": "paki",
+            "category": "racial"
+        },
+        {
+            "term": "kyke",
+            "category": "anti-semitic"
+        },
+        {
+            "term": "mulatto",
+            "category": "racial"
+        },
+        {
+            "term": "muzzie",
+            "category": "racial"
+        },
+        {
+            "term": "mutt",
+            "category": "racial"
+        },
+        {
+            "term": "oriental",
+            "category": "racial"
+        },
+        {
+            "term": "globalist",
+            "category": "anti-semitic"
+        },
+        {
+            "term": "gimp",
+            "category": "ableist"
+        },
+        {
+            "term": "gaylord",
+            "category": "homophobic"
+        },
+        {
+            "term": "ghey",
+            "category": "homophobic"
+        },
+        {
+            "term": "fudgepacker",
+            "category": "homophobic"
+        },
+        {
+            "term": "ching chong",
+            "category": "racial"
+        },
+        {
+            "term": "colored",
+            "category": "racial"
+        },
+        {
+            "term": "coon",
+            "category": "racial"
+        },
+        {
+            "term": "cocksucker",
+            "category": "homophobic"
+        },
+        {
+            "term": "chinaman",
+            "category": "racial"
+        },
+        {
+            "term": "chinamen",
+            "category": "racial"
+        },
+        {
+            "term": "wetback",
+            "category": "racial"
+        },
+        {
+            "term": "darkie",
+            "category": "racial"
+        },
+        {
+            "term": "beaner",
+            "category": "racial"
+        },
+        {
+            "term": "slag",
+            "category": "misogynist"
+        },
+        {
+            "term": "Aunt Jemima",
+            "category": "racial"
+        },
+        {
+            "term": "hoe",
+            "category": "misogynist"
+        }
+
+    ]
+}

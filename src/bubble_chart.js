@@ -12,24 +12,11 @@ function bubbleChart() {
   var height = 600;
 
   // tooltip for mouseover functionality
-  var tooltip = floatingTooltip('gates_tooltip', 240);
+  var tooltip = floatingTooltip('tooltip', 240);
 
   // Locations to move bubbles towards, depending
   // on which view mode is selected.
   var center = { x: width / 2, y: height / 2 };
-
-  var yearCenters = {
-    2008: { x: width / 3, y: height / 2 },
-    2009: { x: width / 2, y: height / 2 },
-    2010: { x: 2 * width / 3, y: height / 2 }
-  };
-
-  // X locations of the year titles.
-  var yearsTitleX = {
-    2008: 160,
-    2009: width / 2,
-    2010: width - 160
-  };
 
   // @v4 strength to apply to the position forces
   var forceStrength = 0.03;
@@ -73,10 +60,7 @@ function bubbleChart() {
 
   // Nice looking colors - no reason to buck the trend
   // @v4 scales now have a flattened naming scheme
-  var fillColor = d3.scaleOrdinal()
-    .domain(['low', 'medium', 'high'])
-    .range(['#d84b2a', '#beccae', '#7aa25c']);
-
+  var fillColor = d3.scaleOrdinal(d3.schemeCategory10)
 
   /*
    * This data manipulation function takes the raw data from
@@ -93,7 +77,7 @@ function bubbleChart() {
   function createNodes(rawData) {
     // Use the max total_amount in the data as the max in the scale's domain
     // note we have to ensure the total_amount is a number.
-    var maxAmount = d3.max(rawData, function (d) { return +d.total_amount; });
+    var maxAmount = d3.max(rawData, function (d) { return +d.slurs_used; });
 
     // Sizes bubbles based on area.
     // @v4: new flattened scale names.
@@ -107,15 +91,12 @@ function bubbleChart() {
     // working with data.
     var myNodes = rawData.map(function (d) {
       return {
-        id: d.id,
-        radius: radiusScale(+d.total_amount),
-        value: +d.total_amount,
-        name: d.grant_title,
-        org: d.organization,
-        group: d.group,
-        year: d.start_year,
-        x: Math.random() * 900,
-        y: Math.random() * 800
+        id: d.title,
+        slurs_used: d.slurs_used,
+        radius: radiusScale(+d.slurs_used),
+        category: d.category,
+        x: Math.random() * 940,
+        y: Math.random() * 600
       };
     });
 
@@ -198,72 +179,18 @@ function bubbleChart() {
   }
 
   /*
-   * Provides a x value for each node to be used with the split by year
-   * x force.
-   */
-  function nodeYearPos(d) {
-    return yearCenters[d.year].x;
-  }
-
-
-  /*
    * Sets visualization in "single group mode".
    * The year labels are hidden and the force layout
    * tick function is set to move all nodes to the
    * center of the visualization.
    */
-  function groupBubbles() {
-    hideYearTitles();
-
+  function groupBubbles() {  
     // @v4 Reset the 'x' force to draw the bubbles to the center.
     simulation.force('x', d3.forceX().strength(forceStrength).x(center.x));
 
     // @v4 We can reset the alpha value and restart the simulation
     simulation.alpha(1).restart();
   }
-
-
-  /*
-   * Sets visualization in "split by year mode".
-   * The year labels are shown and the force layout
-   * tick function is set to move nodes to the
-   * yearCenter of their data's year.
-   */
-  function splitBubbles() {
-    showYearTitles();
-
-    // @v4 Reset the 'x' force to draw the bubbles to their year centers
-    simulation.force('x', d3.forceX().strength(forceStrength).x(nodeYearPos));
-
-    // @v4 We can reset the alpha value and restart the simulation
-    simulation.alpha(1).restart();
-  }
-
-  /*
-   * Hides Year title displays.
-   */
-  function hideYearTitles() {
-    svg.selectAll('.year').remove();
-  }
-
-  /*
-   * Shows Year title displays.
-   */
-  function showYearTitles() {
-    // Another way to do this would be to create
-    // the year texts once and then just hide them.
-    var yearsData = d3.keys(yearsTitleX);
-    var years = svg.selectAll('.year')
-      .data(yearsData);
-
-    years.enter().append('text')
-      .attr('class', 'year')
-      .attr('x', function (d) { return yearsTitleX[d]; })
-      .attr('y', 40)
-      .attr('text-anchor', 'middle')
-      .text(function (d) { return d; });
-  }
-
 
   /*
    * Function called on mouseover to display the
@@ -274,13 +201,13 @@ function bubbleChart() {
     d3.select(this).attr('stroke', 'black');
 
     var content = '<span class="name">Title: </span><span class="value">' +
-                  d.name +
+                  d.id +
                   '</span><br/>' +
-                  '<span class="name">Amount: </span><span class="value">$' +
-                  addCommas(d.value) +
+                  '<span class="name">Slurs Found: </span><span class="value">' +
+                  d.slurs_used +
                   '</span><br/>' +
-                  '<span class="name">Year: </span><span class="value">' +
-                  d.year +
+                  '<span class="name">Story category: </span><span class="value">' +
+                  d.category +
                   '</span>';
 
     tooltip.showTooltip(content, d3.event);
@@ -312,7 +239,6 @@ function bubbleChart() {
     }
   };
 
-
   // return the chart function from closure.
   return chart;
 }
@@ -333,7 +259,9 @@ function display(error, data) {
     console.log(error);
   }
 
-  myBubbleChart('#vis', data);
+  console.log(data)
+
+  myBubbleChart('#bubblechart', data);
 }
 
 /*
@@ -360,25 +288,8 @@ function setupButtons() {
     });
 }
 
-/*
- * Helper function to convert a number into a string
- * and add commas to it to improve presentation.
- */
-function addCommas(nStr) {
-  nStr += '';
-  var x = nStr.split('.');
-  var x1 = x[0];
-  var x2 = x.length > 1 ? '.' + x[1] : '';
-  var rgx = /(\d+)(\d{3})/;
-  while (rgx.test(x1)) {
-    x1 = x1.replace(rgx, '$1' + ',' + '$2');
-  }
-
-  return x1 + x2;
-}
-
 // Load the data.
-d3.csv('data/gates_money.csv', display);
+d3.csv('data/threads.csv', display);
 
 // setup the buttons.
 setupButtons();
